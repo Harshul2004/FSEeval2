@@ -39,14 +39,14 @@ A modern eCommerce platform built with React, Node.js, Express, GraphQL, and MyS
 
 2. Install dependencies:
    ```bash
-   npm install
-   cd views && npm install
+   npm install or npm i
+   cd views && npm install or npm i
    cd ..
    ```
 
 3. Create a MySQL database:
    ```sql
-   CREATE DATABASE ecommerce_db;
+   CREATE DATABASE ecommerce_furniture;
    ```
 
 4. Configure environment variables:
@@ -59,29 +59,77 @@ A modern eCommerce platform built with React, Node.js, Express, GraphQL, and MyS
    npm run dev
 
    # In another terminal, start frontend
-   npm run client
-   ```
-
-   Or run both concurrently:
-   ```bash
-   npm run dev:full
+   npm start
    ```
 
 ## Project Structure
 
 ```
-ecommerce-platform/
-│── css/                    # Stylesheets
-│── js/                     # Express server files
-│   ├── config/            # Configuration files
-│   ├── controllers/       # Business logic
-│   ├── graphql/           # GraphQL schema and resolvers
-│   ├── middlewares/       # Authentication, validation
-│   ├── models/            # Sequelize models
-│   └── server.js          # Server entry point
-│── views/                 # React frontend
-│── .env                   # Environment variables
-└── package.json           # Project dependencies
+TESTPROJECT/
+├── config/
+│   └── database.js
+├── controllers/
+│   ├── invoiceController.js
+│   ├── orderController.js
+│   ├── productController.js
+│   └── userController.js
+├── graphql/
+│   ├── resolvers.js
+│   └── schema.js
+├── js/
+│   └── server.js
+├── middlewares/
+│   └── auth.js
+├── models/
+│   ├── index.js
+│   ├── Invoice.js
+│   ├── Order.js
+│   ├── OrderItem.js
+│   ├── Product.js
+│   └── User.js
+├── node_modules/
+├── views/                  <-- React frontend lives here
+│   ├── node_modules/
+│   ├── public/
+│   └── src/
+│       ├── apollo/
+│       │   └── client.js
+│       ├── components/
+│       │   └── ProtectedRoute.js
+│       ├── contexts/
+│       │   ├── AuthContext.js
+│       │   └── CartContext.js
+│       ├── layouts/
+│       │   ├── AuthLayout.js
+│       │   └── MainLayout.js
+│       ├── pages/
+│       │   ├── AdminDashboard.js
+│       │   ├── Cart.js
+│       │   ├── Home.js
+│       │   ├── InvoiceDetail.js
+│       │   ├── Invoices.js
+│       │   ├── Login.js
+│       │   ├── OrderDetail.js
+│       │   ├── Orders.js
+│       │   ├── ProductDetail.js
+│       │   ├── Products.js
+│       │   ├── Profile.js
+│       │   └── Register.js
+│       ├── App.css
+│       ├── App.js
+│       ├── App.test.js
+│       ├── index.css
+│       ├── index.js
+│       ├── logo.svg
+│       ├── reportWebVitals.js
+│       ├── setupTests.js
+│       └── theme.js
+├── .env
+├── .env.example
+├── package-lock.json
+├── package.json
+├── README.md
+└── seed-products.js
 ```
 
 ## API Documentation
