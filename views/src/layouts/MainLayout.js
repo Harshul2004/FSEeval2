@@ -20,9 +20,12 @@ import {
   Dashboard,
   Inventory,
   ListAlt,
+  Brightness4,
+  Brightness7,
 } from '@mui/icons-material';
 import { AuthContext } from '../contexts/AuthContext';
 import { CartContext } from '../contexts/CartContext';
+import { useThemeMode } from '../contexts/ThemeModeContext';
 
 class ErrorBoundary extends Component {
   state = { hasError: false };
@@ -54,6 +57,7 @@ class ErrorBoundary extends Component {
 const MainLayout = () => {
   const { user, logout, hasRole } = useContext(AuthContext);
   const { cart = [] } = useContext(CartContext) || {};
+  const { mode, toggleMode } = useThemeMode();
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -177,6 +181,10 @@ const MainLayout = () => {
               Login
             </Button>
           )}
+
+          <IconButton color="inherit" onClick={toggleMode} sx={{ ml: 2 }}>
+            {mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
+          </IconButton>
         </Toolbar>
       </AppBar>
 

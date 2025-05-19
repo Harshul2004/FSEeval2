@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet, Navigate } from 'react-router-dom';
+import { Outlet, Navigate, Link as RouterLink } from 'react-router-dom';
 import { Box, Container, Paper, Typography } from '@mui/material';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -33,9 +33,10 @@ const AuthLayout = () => {
           }}
         >
           <Typography
-            component="h1"
+            component={RouterLink}
+            to="/"
             variant="h4"
-            sx={{ mb: 4, fontWeight: 'bold' }}
+            sx={{ mb: 4, fontWeight: 'bold', textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
           >
             E-Commerce Store
           </Typography>
@@ -46,4 +47,4 @@ const AuthLayout = () => {
   );
 };
 
-export default AuthLayout; 
+export default AuthLayout;

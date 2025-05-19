@@ -14,16 +14,20 @@ import {
 import {
   ShoppingCart as ShoppingCartIcon,
   Person as PersonIcon,
+  Brightness4,
+  Brightness7,
 } from '@mui/icons-material';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useCart } from '../contexts/CartContext';
+import { useThemeMode } from '../contexts/ThemeModeContext';
 
 const Navbar = () => {
   const { user, logout } = useAuth();
   const { cartItems } = useCart();
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
+  const { mode, toggleMode } = useThemeMode();
 
   // Debug logging
   useEffect(() => {
@@ -52,10 +56,14 @@ const Navbar = () => {
           variant="h6"
           component={RouterLink}
           to="/"
-          sx={{ flexGrow: 1, textDecoration: 'none', color: 'inherit' }}
+          sx={{ flexGrow: 1, textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
         >
           E-Commerce Store
         </Typography>
+
+        <IconButton onClick={toggleMode} color="inherit">
+          {mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
+        </IconButton>
 
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
           {user ? (
@@ -167,5 +175,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
-// done
+export default Navbar;

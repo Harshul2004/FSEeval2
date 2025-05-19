@@ -1,0 +1,85 @@
+Structure
+
+TESTPROJECT/
+├── config/
+│   └── database.js
+├── controllers/
+│   ├── invoiceController.js
+│   ├── orderController.js
+│   ├── productController.js
+│   └── userController.js
+├── graphql/
+│   ├── resolvers.js
+│   └── schema.js
+├── js/
+│   └── server.js
+├── middlewares/
+│   └── auth.js
+├── migrations/
+│   └── add-shipping-address-payment-method.js
+├── models/
+│   ├── index.js
+│   ├── Invoice.js
+│   ├── Order.js
+│   ├── OrderItem.js
+│   ├── Product.js
+│   └── User.js
+├── node_modules/
+├── server/src/resolvers/
+│   └── auth.js
+├── views/                  <-- React frontend lives here
+│   ├── node_modules/
+│   ├── public/
+│   └── src/
+│       ├── apollo/
+│       │   └── client.js
+│       ├── components/
+│       │   ├── ProtectedRoute.js
+│       │   └── Navbar.js
+│       ├── contexts/
+│       │   ├── AuthContext.js
+│       │   └── CartContext.js
+│       ├── layouts/
+│       │   ├── AuthLayout.js
+│       │   └── MainLayout.js
+│       ├── pages/
+│       │   ├── AdminDashboard.js
+│       │   ├── AdminEmployeeManagement.js
+│       │   ├── Cart.js
+│       │   ├── Checkout.js
+│       │   ├── EmployeeLogin.js
+│       │   ├── EmployeeOrders.js
+│       │   ├── EmployeeDashboard.js
+│       │   ├── Home.js
+│       │   ├── InvoiceDetail.js
+│       │   ├── Invoices.js
+│       │   ├── Login.js
+│       │   ├── LoginPage.js
+│       │   ├── OrderDetail.js
+│       │   ├── Orders.js
+│       │   ├── ProductDetail.js
+│       │   ├── Products.js
+│       │   ├── Profile.js
+│       │   └── Register.js
+│       ├── App.css
+│       ├── App.js
+│       ├── App.test.js
+│       ├── index.css
+│       ├── index.js
+│       ├── logo.svg
+│       ├── reportWebVitals.js
+│       ├── setupTests.js
+│       └── theme.js
+├── .env
+├── .env.example2
+├── package-lock.json
+├── package.json
+├── README.md
+└── seed-products.js
+
+database name  - ecommerce_furniture;
+
+
+
+
+

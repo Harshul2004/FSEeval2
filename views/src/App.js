@@ -3,7 +3,7 @@ import { ApolloProvider } from '@apollo/client';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import client from './apollo/client';
-import theme from './theme';
+import getTheme from './theme';
 import MainLayout from './layouts/MainLayout';
 import AuthLayout from './layouts/AuthLayout';
 import Home from './pages/Home';
@@ -11,29 +11,32 @@ import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
 import Cart from './pages/Cart';
 import Orders from './pages/Orders';
-import OrderDetail from './pages/OrderDetail';
-import Invoices from './pages/Invoices';
-import InvoiceDetail from './pages/InvoiceDetail';
+// import OrderDetail from './pages/OrderDetail';
+// import Invoices from './pages/Invoices';
+// import InvoiceDetail from './pages/InvoiceDetail';
 import Profile from './pages/Profile';
 import AdminDashboard from './pages/AdminDashboard';
-import Login from './pages/Login';
+// import Login from './pages/Login';
 import Register from './pages/Register';
 import { AuthProvider } from './contexts/AuthContext';
 import { CartProvider } from './contexts/CartContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import Checkout from './pages/Checkout';
-import EmployeeLogin from './pages/EmployeeLogin';
+// import EmployeeLogin from './pages/EmployeeLogin';
 import EmployeeOrders from './pages/EmployeeOrders';
-import { useAuth } from './contexts/AuthContext';
-import { useLocation } from 'react-router-dom';
+// import { useAuth } from './contexts/AuthContext';
+// import { useLocation } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import AdminEmployeeManagement from './pages/AdminEmployeeManagement';
 import EmployeeDashboard from './pages/EmployeeDashboard';
+import { useThemeMode } from './contexts/ThemeModeContext';
 
 function App() {
+  const { mode } = useThemeMode();
+
   return (
     <ApolloProvider client={client}>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={getTheme(mode)}>
         <CssBaseline />
         <Router>
           <AuthProvider>
@@ -49,7 +52,7 @@ function App() {
                 <Route element={<MainLayout />}>
                   <Route path="/" element={<Home />} />
                   <Route path="/products" element={<Products />} />
-                  <Route path="/product/:id" element={<ProductDetail />} />
+                  <Route path="/products/:id" element={<ProductDetail />} />
                   
                   {/* Protected Routes */}
                   <Route element={<ProtectedRoute />}>

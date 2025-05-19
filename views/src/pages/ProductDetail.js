@@ -23,7 +23,7 @@ const GET_PRODUCT = gql`
       price
       stock
       category
-      image
+      imageUrl
     }
   }
 `;
@@ -103,7 +103,7 @@ const ProductDetail = () => {
           >
             <Box
               component="img"
-              src={product.image || 'https://via.placeholder.com/400'}
+              src={product.imageUrl || 'https://via.placeholder.com/400'}
               alt={product.name}
               sx={{
                 maxWidth: '100%',
